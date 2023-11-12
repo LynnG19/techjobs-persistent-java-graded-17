@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Size;
 @Entity
 public class Skill extends AbstractEntity {
     @NotBlank(message = "Description is required")
-    @Size(max = 500, message = "Description exceeds character max")
+    @Size(max = 255, message = "Description exceeds character max")
     private String description;
 
     public Skill() {
