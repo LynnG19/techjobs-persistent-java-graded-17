@@ -1,9 +1,7 @@
 --Part 1
-
-id INT,
-name VARCHAR(255),
-employer VARCHAR(255),
-skills VARCHAR(255)
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'job';
 
 
 
@@ -16,5 +14,8 @@ WHERE location = "St. Louis City";
 
 
 --Part 3
+DROP table job;
+
+
 
 --Part 4
