@@ -57,12 +57,12 @@ public class HomeController {
                                        Errors errors, Model model, @RequestParam int employerId, @RequestParam List<Integer> skills) {
 
         if (errors.hasErrors()) {
-	    model.addAttribute("title", "Add Job");
-            Employer newEmployer = employerRepository.findById(employerId).orElse(new Employer());
-            newJob.setEmployer(newEmployer);
+
             return "add";
         }
-
+        model.addAttribute("title", "Add Job");
+        Employer newEmployer = employerRepository.findById(employerId).orElse(new Employer());
+        newJob.setEmployer(newEmployer);
 
         List<Skill> skill222 = (List<Skill>) skillRepository.findAllById(skills);
         newJob.setSkills(skill222);
@@ -77,7 +77,7 @@ public class HomeController {
         if (optjobId.isPresent()) {
             Job job = (Job) optjobId.get();
             model.addAttribute("job", job);
-            return "employers/view";
+            return "view";
         } else {
             return "redirect:../";
         }

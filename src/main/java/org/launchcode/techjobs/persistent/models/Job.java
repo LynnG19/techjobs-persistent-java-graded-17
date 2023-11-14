@@ -11,10 +11,10 @@ public class Job extends AbstractEntity{
 
 
     @ManyToOne
-        private Employer employer;
+    private Employer employer;
 
-        @ManyToMany
-        private List<Skill> skills;
+    @ManyToMany
+    private List<Skill> skills;
 
 
     public Job() {
